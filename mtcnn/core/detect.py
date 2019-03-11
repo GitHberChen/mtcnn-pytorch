@@ -1,3 +1,4 @@
+# coding:utf-8
 import cv2
 import time
 import numpy as np
@@ -20,6 +21,9 @@ def create_mtcnn_net(p_model_path=None, r_model_path=None, o_model_path=None, us
             pnet.cuda()
         else:
             # forcing all GPU tensors to be in CPU while loading
+            # lambda的用途：输入两个元素，返回第一个
+            # torch.load(f, map_location=None,
+            # pickle_module=<module 'pickle' from '/Users/sunjiaming/anaconda3/lib/python3.6/pickle.py'>)
             pnet.load_state_dict(torch.load(p_model_path, map_location=lambda storage, loc: storage))
         pnet.eval()
 
@@ -73,8 +77,10 @@ class MtcnnDetector(object):
         # 处理输入为PIL图片的情况
         if not isinstance(im, np.ndarray):
             if im.mode == 'I':
+                # I (32-bit signed integer pixels)
                 im = np.array(im, np.int32, copy=False)
             elif im.mode == 'I;16':
+                # I;16 (16-bit signed integer pixels
                 im = np.array(im, np.int16, copy=False)
             else:
                 im = np.asarray(im)
@@ -92,7 +98,7 @@ class MtcnnDetector(object):
             a square bbox
         """
         square_bbox = bbox.copy()
-
+        # [x1, y1, x2, y2]
         # x2 - x1
         # y2 - y1
         h = bbox[:, 3] - bbox[:, 1] + 1
