@@ -85,7 +85,7 @@ class MtcnnDetector(object):
             else:
                 im = np.asarray(im)
         return im
-
+    # 干啥？
     def square_bbox(self, bbox):
         """
             convert bbox to square

@@ -84,7 +84,7 @@ def vis_two(im_array, dets1, dets2, thresh=0.9):
     plt.show()
 
 
-def vis_face(im_array, dets, landmarks, save_name):
+def vis_face(im_array, dets, landmarks, save_name, save=True, show=True ):
     """Visualize detection results before and after calibration
 
     Parameters:
@@ -136,5 +136,8 @@ def vis_face(im_array, dets, landmarks, save_name):
                 #                          bbox[3] - bbox[1], fill=False,
                 #                          edgecolor=color, linewidth=0.5)
                 #     plt.gca().add_patch(rect)
-        pylab.savefig(save_name)
-        pylab.show()
+        if save:
+            pylab.savefig(save_name)
+        if show:
+            pylab.show()
+        return pylab
