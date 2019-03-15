@@ -4,7 +4,6 @@
 
 # results:
 
-![](https://github.com/Sierkinhane/mtcnn-pytorch/blob/master/results/r_1.jpg)
 ![](https://github.com/Sierkinhane/mtcnn-pytorch/blob/master/results/r_2.jpg)
 ![](https://github.com/Sierkinhane/mtcnn-pytorch/blob/master/results/r_3.jpg)
 ![](https://github.com/Sierkinhane/mtcnn-pytorch/blob/master/results/r_4.jpg)
@@ -13,6 +12,9 @@
 
 # Test an image
   * run > python mtcnn_test.py
+  
+# Test camera
+  * run > python live.py
  
 # Training data prepraring
   * download [WIDER FACE](https://pan.baidu.com/s/1sJTO7TcQ2576RUqR_IIhbQ) (passcode:lsl3) face detection data then store it into ./data_set/face_detection
