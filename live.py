@@ -37,12 +37,3 @@ if __name__ == '__main__':
             break
     cap.release()
     cv2.destroyAllWindows()
-    # img = cv2.imread("/Users/chenlinwei/Desktop/屏幕快照 2019-03-11 上午10.16.07.png")
-    # img_bg = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    # b, g, r = cv2.split(img)
-    # img2 = cv2.merge([r, g, b])
-
-    # bboxs, landmarks = mtcnn_detector.detect_face(img)
-    # print box_align
-    # save_name = str(np.random.uniform())+'out_put.jpg'
-    # vis_face(img_bg,bboxs,landmarks, save_name)
